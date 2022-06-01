@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Node.js Desktop Application Template</title>
+  <title>Personnel</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,6 @@
               <th scope="col">Nom</th>
               <th scope="col">Matière</th>
               <th scope="col">Adresse Mail</th>
-              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody id="personnel_liste">
@@ -75,7 +74,7 @@
       else {
         results.forEach(insertHtml)
         function insertHtml(value, index, array) {
-          personnelHtml += '<tr><td><i class="bi bi-person-circle"></i></td><td>' + value.CivilitéEns + '</td><td>' + value.NomEns + '</td><td>' + value.MatièreEns + '</td><td>' + value.emailAddress + '</td><td><a class="btn btn-primary" href="vue_personnel.html/?id=' + value.IdEns + '" role="button">Voir</a></td></tr>';
+          personnelHtml += '<tr><td><i class="bi bi-person-circle"></i></td><td>' + value.CivilitéEns + '</td><td>' + value.NomEns + '</td><td>' + value.MatièreEns + '</td><td>' + value.emailAddress + '</td></tr>';
         }
         document.getElementById('personnel_liste').innerHTML = personnelHtml;
       }
@@ -83,6 +82,28 @@
     connection.end();
     require('../renderer.js')
   </script>
+  <footer class="bg-light text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Plus</h5>
+  
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="apropos.html" class="text-dark">A propos</a>
+            </li>
+            <li>
+              <a href="CGU.html" class="text-dark">CGU</a>
+            </li>
+            <li>
+              <a href="RGPD.html" class="text-dark">RGPD</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
 </body>
 
 </html>
