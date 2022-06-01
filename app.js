@@ -27,46 +27,46 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'static')));
 
 // Chargement page d'accueil
-app.get('index.html', function(request, response) {
+app.get('/', function(request, response) {
 	if (request.session.loggedin) {
 		// Render accueil template
-		response.sendFile(path.join(__dirname + 'index.html'));
+		response.sendFile(path.join(__dirname + '/views/index.html'));
 	}else {
 		// Render login template
-		response.sendFile(path.join(__dirname + 'login.html'));
+		response.sendFile(path.join(__dirname + '/views/login.html'));
 	}
 	
 });
 
-app.get('profil.html', function(request, response) {
+app.get('/profil', function(request, response) {
 	if (request.session.loggedin){
 		// Render profil template
-		response.sendFile(path.join(__dirname + 'profil.html'));
+		response.sendFile(path.join(__dirname + '/views/profil.html'));
 	}else {
 		// Render login template
-		response.sendFile(path.join(__dirname + 'login.html'));
+		response.sendFile(path.join(__dirname + '/views/login.html'));
 	}
 	
 });
 
-app.get('personnel.html', function(request, response) {
+app.get('/personnel', function(request, response) {
 	if (request.session.loggedin){
 		// Render personnel template
-		response.sendFile(path.join(__dirname + 'personnel.html'));
+		response.sendFile(path.join(__dirname + '/views/personnel.html'));
 	}else {
 		// Render login template
-		response.sendFile(path.join(__dirname + 'login.html'));
+		response.sendFile(path.join(__dirname + '/views/login.html'));
 	}
 	
 });
 
-app.get('etudiant.html', function(request, response) {
+app.get('/etudiant', function(request, response) {
 	if (request.session.loggedin){
 		// Render personnel template
-		response.sendFile(path.join(__dirname + 'etudiant.html'));
+		response.sendFile(path.join(__dirname + '/views/etudiant.html'));
 	}else {
 		// Render login template
-		response.sendFile(path.join(__dirname + 'login.html'));
+		response.sendFile(path.join(__dirname + '/views/login.html'));
 	}
 	
 });
